@@ -1,0 +1,56 @@
+body{
+  background-color: #223;
+}
+
+.notes-date, .notes-subtitle {
+  margin-left: 12px;
+  color:#888
+  }
+
+.notes-entry {
+  padding: 12px;
+  border: 1px solid #e8e8e8;
+  background-color: #f0f0f0;
+  margin: 8px;
+  }
+
+.notes-page {
+  background-color: #e4e4e0;
+  padding: 12px;
+  width: 90%;
+  max-width: 1080px;
+  margin: auto;
+  }
+
+code, .py {
+  background-color: #101015;
+  padding:0.2em;
+  border-radius: 0.2em;
+  color: #eeeeff;
+  padding-left: 8px;
+  }
+
+.yt {
+  }
+
+h1 {
+  font-family: 'Tangerine', serif;
+  font-size: 48px;
+}
+
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  border: 10px solid blue;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.text-box {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    background-color: #f0f0e8;
+    margin: auto;
+    width: 540px;
+    }
+}
