@@ -1,0 +1,5 @@
+print("Hi, I'm Python. What's your name?")
+name = input("Name: ")
+print("Hello,", name, "!")
+print("Nice to meet you!")
+print("I am the great chief from Northern Ghana!")
