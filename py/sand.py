@@ -1,9 +1,8 @@
-def good():
-    password=input("Password: ")
-    if len(password) < 8:
-        return print("Too short.")
-    if len(password) > 16:
-        return print ("Too long.")
-    return print("Great!")
+def find_512():
+    for x in range(100):
+        for y in range(100):
+            if x * y == 512:
+                 break   # does not do what we want!
+    return f"{x} * {y} == 512"
 
-good()
+find_512()
