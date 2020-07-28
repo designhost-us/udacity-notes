@@ -1,0 +1,229 @@
+{
+ "metadata": {
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.2-final"
+  },
+  "orig_nbformat": 2,
+  "kernelspec": {
+   "name": "python38264bitaa583e0d1d2f4e648b945aed1e164021",
+   "display_name": "Python 3.8.2 64-bit"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2,
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 28072020\n",
+    "## Hello Markdown!\n",
+    "\n",
+    "While setting up my IDE for anticipated JS projects, I discovered Jupyter Notebooks and decided that this would be a better way of note-taking than my previous HTML based approach.\n",
+    "\n",
+    "Thanks Jupyter!\n",
+    "\n",
+    "Here's some basics of MD:\n",
+    "\n",
+    "br = double space  \n",
+    "esc = \\\n",
+    "ital = \\_ital_  \n",
+    "bold = \\**bold**  \n",
+    "link = \\[a](url)  \n",
+    "img = \\![alt](url)  \n",
+    "quote = \\>  \n",
+    "ul = \\*  \n",
+    "ol = n.  \n",
+    "  ---\n",
+    "  ## Back to school...  \n",
+    "  ### Substrings "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def is_substring(substring, string):\n",
+    "    index = 0\n",
+    "    while index < len(string):\n",
+    "        if string[index : index + len(substring)] == substring:\n",
+    "            return True\n",
+    "        index += 1\n",
+    "    return False\n",
+    "\n",
+    "# This one should return False\n",
+    "print(is_substring('bad', 'abracadabra'))\n",
+    "\n",
+    "# This one should return True\n",
+    "print(is_substring('dab', 'abracadabra'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": "4\n"
+    }
+   ],
+   "source": [
+    "def count_substring(string, target):\n",
+    "    index = 0\n",
+    "    total = 0\n",
+    "    while index < len(string):\n",
+    "        if string[index:index+len(target)] == target:\n",
+    "            total += 1\n",
+    "        index += 1\n",
+    "    return total\n",
+    "\n",
+    "# Here's a call you can test it with. This should print 4:\n",
+    "print(count_substring('love, love, love, all you need is love', 'love'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": "1\n-1\n"
+    }
+   ],
+   "source": [
+    "def locate_first(string, target):\n",
+    "    index = 0\n",
+    "    while index < len(string):\n",
+    "        if string[index : index + len(target)] == target:\n",
+    "            return index\n",
+    "        else:\n",
+    "            index += 1\n",
+    "    return -1\n",
+    "\n",
+    "# Here are a couple function calls to test with.\n",
+    "\n",
+    "# This one should return 1\n",
+    "print(locate_first('cookbook', 'ook'))\n",
+    "\n",
+    "# This one should return -1\n",
+    "print(locate_first('all your bass are belong to us', 'base'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": "[1, 5]\n[]\n"
+    }
+   ],
+   "source": [
+    "def locate_all(string, target):\n",
+    "    matches = []\n",
+    "    index = 0\n",
+    "    while index < len(string):\n",
+    "        if string[index : index + len(target)] == target:\n",
+    "            matches.append(index)\n",
+    "            index += len(target)\n",
+    "        else:\n",
+    "            index += 1\n",
+    "    return matches\n",
+    "\n",
+    "# Here are a couple function calls to test with.\n",
+    "\n",
+    "# This one should return 1\n",
+    "print(locate_all('cookbook', 'ook'))\n",
+    "\n",
+    "# This one should return -1\n",
+    "print(locate_all('all your bass are belong to us', 'base'))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### [Serarch](https://youtu.be/DSVmkhuLN0w) in Python\n",
+    "\n",
+    "is_substring = \"in\" i.e. ```'box' in 'big box'``` = True  \n",
+    "* see also ```not in```  \n",
+    "\n",
+    "locate_first = ```string.find('substring')```  \n",
+    "* see also ```string.count(substring)```  \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "execute_result",
+     "data": {
+      "text/plain": "'c-a-t'"
+     },
+     "metadata": {},
+     "execution_count": 37
+    }
+   ],
+   "source": [
+    "\"-\".join(\"cat\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "execute_result",
+     "data": {
+      "text/plain": "'Haiku frogs in snow<br>A limerick came from Nantucket<br>Tetrametric drum-beats thrumming, Hiawathianic rhythm.'"
+     },
+     "metadata": {},
+     "execution_count": 44
+    }
+   ],
+   "source": [
+    "lines = [\"Haiku frogs in snow\", \"A limerick came from Nantucket\", \"Tetrametric drum-beats thrumming, Hiawathianic rhythm.\"]\n",
+    "\n",
+    "def breakify():\n",
+    "   return \"<br>\".join(lines)\n",
+    "\n",
+    "breakify()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ]
+}
