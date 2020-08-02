@@ -68,7 +68,7 @@ def roll(name, purse, wins, losses, cashier_name, dealer_name, waged, bet):
         if bet == '2':
             lose(name, purse, wins, losses, cashier_name, dealer_name, waged)
         else:
-            win(name, purse, wins, losses, cashier_name, dealer_name, waged)       
+            win(name, purse, wins, losses, cashier_name, dealer_name, waged)
 
 def wager(name, purse, wins, losses, cashier_name, dealer_name):
     while True:
@@ -94,7 +94,7 @@ def wager(name, purse, wins, losses, cashier_name, dealer_name):
             pp(f"\"High roller!\" {dealer_name} shouts and rolls the dice.")
             break
     roll(name, purse, wins, losses, cashier_name, dealer_name, waged, bet)
-        
+
 def stats_out(name, purse, wins, losses, cashier_name, dealer_name):
         pn(f"Statistics: {name}")
         print(f"You have {purse} credits.")
@@ -152,14 +152,14 @@ def lobby(name, purse, wins, losses, cashier_name, dealer_name):
         lobby(name, purse, wins, losses, cashier_name, dealer_name)
 
 def banner():
-    print("")
+    print("Adventure")
     print(" ██████╗ █████╗ ███████╗██╗███╗   ██╗ ██████╗ ")
     print("██╔════╝██╔══██╗██╔════╝██║████╗  ██║██╔═══██╗")
     print("██║     ███████║███████╗██║██╔██╗ ██║██║   ██║")
     print("██║     ██╔══██║╚════██║██║██║╚██╗██║██║   ██║")
     print("╚██████╗██║  ██║███████║██║██║ ╚████║╚██████╔╝")
     print(" ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ")
-    print("                                              ")
+    print("                             by Mike Battaglia")
 
 banner()
 lobby(name, purse, wins, losses, cashier_name, dealer_name)
