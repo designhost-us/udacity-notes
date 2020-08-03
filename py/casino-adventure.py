@@ -39,7 +39,7 @@ def banner():
     print("╚██████╗██║  ██║███████║██║██║ ╚████║╚██████╔╝")
     print(" ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ")
     print("                             by Mike Battaglia")
-    
+
 def lobby(name, purse, wins, losses, cashier_name, dealer_name):
     pn("You are in the lobby.")
     pp(random.choice(ambiance))
@@ -70,7 +70,7 @@ def cashier(name, purse, wins, losses, cashier_name, dealer_name):
         pn("\"I hope you're having fun!\"")
         stats_out(name, purse, wins, losses, cashier_name, dealer_name)
         lobby(name, purse, wins, losses, cashier_name, dealer_name)
-        
+
 def dice_table(name, purse, wins, losses, cashier_name, dealer_name):
     pn("You approach the dice table.")
     if purse < int(1):
@@ -157,11 +157,17 @@ def stats_out(name, purse, wins, losses, cashier_name, dealer_name):
         print(f"You have {wins} wins and {losses} losses.")
 
 def retire(name, purse, wins, losses, cashier_name, dealer_name):
-    pn("You gotta know when to hold 'em,")
-    pp("know when to fold 'em")
-    pp("Know when to walk away")
-    pp("And know when to run!")
-    stats_out(name, purse, wins, losses, cashier_name, dealer_name)
+    pn("Are you sure you'd like to quit?")
+    pp("(1) Quit.")
+    quit = input("(2) Cancel.")
+    if quit == '1':
+        pn("You gotta know when to hold 'em,")
+        pp("know when to fold 'em")
+        pp("Know when to walk away")
+        pp("And know when to run!")
+        stats_out(name, purse, wins, losses, cashier_name, dealer_name)
+    else:
+        lobby(name, purse, wins, losses, cashier_name, dealer_name)
 
 banner()
 lobby(name, purse, wins, losses, cashier_name, dealer_name)
