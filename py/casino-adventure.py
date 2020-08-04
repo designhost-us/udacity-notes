@@ -34,12 +34,12 @@ cashier_name = random.choice(npc_name)
 dealer_name = random.choice(npc_name)
 
 
-def pp(text):
+def pp(text):  # A "print-and-pause" function.
     print(text)
     time.sleep(1/2)
 
 
-def pn(text):
+def pn(text):  # Adds a new line above a print-and-pause function.
     pp("")
     pp(text)
 
