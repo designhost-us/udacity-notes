@@ -45,6 +45,7 @@ def pn(text):  # Adds a new line above a print-and-pause function.
 
 
 def banner():
+    print("")
     print("Adventure")
     print(" ██████╗ █████╗ ███████╗██╗███╗   ██╗ ██████╗ ")
     print("██╔════╝██╔══██╗██╔════╝██║████╗  ██║██╔═══██╗")
@@ -53,6 +54,8 @@ def banner():
     print("╚██████╗██║  ██║███████║██║██║ ╚████║╚██████╔╝")
     print(" ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ")
     print("                             by Mike Battaglia")
+    lobby("", int(0), int(0), int(0), random.choice(npc_name),
+          random.choice(npc_name))
 
 
 def lobby(name, purse, wins, losses, cashier_name, dealer_name):
@@ -109,6 +112,8 @@ def wager(name, purse, wins, losses, cashier_name, dealer_name):
             val = int(waged)
             if val < 1:
                 print("You can't wager less than 1 credit.")
+            elif val > purse:
+                print("You can't wager more than you have in your purse.")
                 continue
             break
         except ValueError:
@@ -158,7 +163,7 @@ def lose(name, purse, wins, losses, cashier_name, dealer_name, waged):
     print(f"{dealer_name}", random.choice(loss_reaction), sep="")
     purse -= int(waged)
     losses += 1
-    if purse == 0:
+    if purse < 1:
         pp("You're broke!")
         retire(name, purse, wins, losses, cashier_name, dealer_name)
     else:
@@ -185,18 +190,23 @@ def stats_out(name, purse, wins, losses, cashier_name, dealer_name):
 
 
 def retire(name, purse, wins, losses, cashier_name, dealer_name):
-    pn("Are you sure you'd like to quit?")
+    pn("Would you like to quit, or start over?")
     pp("(1) Quit.")
-    quit = input("(2) Cancel.\n")
+    pp("(2) Reset.")
+    quit = input("(3) Cancel.\n")
     if quit == '1':
         pn("You gotta know when to hold 'em,")
         pp("know when to fold 'em")
         pp("Know when to walk away")
         pp("And know when to run!")
         stats_out(name, purse, wins, losses, cashier_name, dealer_name)
+    elif quit == '2':
+        pn("Compulsive gamblers be advised:")
+        pp("there is no reset button in Vegas.")
+        print("")
+        banner()
     else:
         lobby(name, purse, wins, losses, cashier_name, dealer_name)
 
 
 banner()
-lobby(name, purse, wins, losses, cashier_name, dealer_name)
